@@ -1,0 +1,24 @@
+﻿<Window x:Class="Secureity.Open"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Secureity"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          WindowStyle="None"
+        ResizeMode="NoResize"
+           WindowStartupLocation="CenterScreen"
+        Title="Open" Height="500" Width="900">
+    <Grid Background="#111111" MouseLeave="Grid_MouseLeave">
+        <DockPanel Margin="20 10 20 25" >
+            <TextBox Width="1" Height="1" x:Name="Post_User" Visibility="Hidden"></TextBox>
+            <TextBox Width="1" Height="1" x:Name="Name_User" Visibility="Hidden"></TextBox>
+            <WrapPanel   HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0 0 0 10">
+                <Button Name="btnOpenFile" Click="btnOpenFiles_Click">Подгрузить Файлы</Button>
+            </WrapPanel>
+            <ListBox Margin="0 0 0 30" Background="#BBBBBB" Name="listBox1" MouseDoubleClick="listBox1_MouseDoubleClick"/>
+        </DockPanel>
+        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" Height="30" Width="150" Margin=" 0 440 0 0" Name="Back" Click="Back_Click">Назад</Button>
+    </Grid>
+</Window>

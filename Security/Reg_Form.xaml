@@ -1,0 +1,102 @@
+﻿<Window x:Class="Secureity.Reg_Form"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:local="clr-namespace:Secureity"
+mc:Ignorable="d"
+ResizeMode="NoResize"
+         WindowStyle="None"
+      
+      
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         WindowStartupLocation="CenterScreen"
+Title="Окно регистрации"  Height="547.6" Width="618" >
+    <Grid Background="#333333" Margin="0,0,-0.4,-0.8"   >
+        <Image x:Name="myImag" Source="Image/Title.jpg"  Margin="3,0,585,518" Width="30.4" Height="30.4"/>
+
+        <Border Margin="106,-8,430,508"  Background="#333333">
+            <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="{DynamicResource MaterialDesignFont}" Margin="-67,17,71.6,17" HorizontalAlignment="Right" Width="77"  > Security Notes</TextBlock>
+        </Border>
+        <Border  Margin="25,30,25,0" VerticalAlignment="Top" Padding="20" Background="#ddd" CornerRadius="10" Height="464" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="#222222" ShadowDepth="10"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Здесь мы регистрируемся!" FontSize="30" FontWeight="Bold" Margin="0 0 0 15 " HorizontalAlignment="Center"/>
+
+                <ComboBox Name="comboBoxpost" materialDesign:HintAssist.Hint="Выберете должность" Margin="0 0 0 10" >
+                    <TextBlock  FontSize="16">Руководитель</TextBlock>
+                    <TextBlock FontSize="16">Администратор</TextBlock>
+                    <TextBlock FontSize="16">Сотрудник</TextBlock>
+
+                </ComboBox>
+
+                <TextBox x:Name="textBoxname" materialDesign:HintAssist.Hint="Введите Имя" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <TextBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введите свое имя
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+                <TextBox x:Name="textBoxsecondname" materialDesign:HintAssist.Hint="Введите Фамилию" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <TextBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введите свою фамилию
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+                <TextBox x:Name="textBoxemail" materialDesign:HintAssist.Hint="Введите Email" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <TextBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введите свой email
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+
+
+                <TextBox x:Name="textBoxlogin" materialDesign:HintAssist.Hint="Введите логин" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <TextBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введите логин не мение 5 символов и не более 15
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+
+                <PasswordBox x:Name="textBoxpass" materialDesign:HintAssist.Hint="Введите пароль" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                    <PasswordBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введите пароль содержащий буквы, цифры и символы _,/,@,#,-
+                        </ToolTip>
+                    </PasswordBox.ToolTip>
+                </PasswordBox>
+
+                <PasswordBox x:Name="textBoxrepeatpass" materialDesign:HintAssist.Hint="Введите пароль повторно" Margin="0 0 0 10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                    <PasswordBox.ToolTip>
+                        <ToolTip VerticalOffset="-50">
+                            Введити пароль снова
+                        </ToolTip>
+                    </PasswordBox.ToolTip>
+                </PasswordBox>
+
+
+                <Button Content=" Регистрации" Margin="0 15 0 0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click_Check" />
+
+
+            </StackPanel>
+        </Border>
+        <Button  x:Name="Exit" Style="{StaticResource MaterialDesignRaisedAccentButton}" Padding="0" FontSize="15" Margin="25,508,430,10" Height="Auto"  MouseEnter="Button_MouseEnter_Exit"  MouseLeave="Button_MouseLeave_Exit" Click="Button_Click_Exit">
+            <TextBlock Foreground="Black" Text="Выход из программы" Height="19"/>
+
+        </Button>
+        <Button x:Name="Back"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Padding="0" FontSize="15" Margin="430,508,25,10" Height="Auto"  MouseEnter="Back_MouseEnter_Back"  MouseLeave="Back_MouseLeave_Back" Click="Back_Click_Back">
+            <TextBlock Foreground="Black" Text="Назад"/>
+
+        </Button>
+        <TextBlock  x:Name="Alarm"  HorizontalAlignment="Center" Foreground="Red" FontSize="12" Margin="52,418,48,112" Width="518" Visibility="Hidden" ><Run Text="Вас либо нет в базе данных, либо вы неправильно ввели данные! Обращайтесь в поддержку."/></TextBlock>
+    </Grid>
+</Window>
